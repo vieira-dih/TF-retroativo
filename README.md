@@ -57,34 +57,32 @@ Para executar o projeto utilizando containers Docker, siga os passos abaixo:
 ### Pré-requisitos
 - Docker instalado
 - Docker Compose instalado
-- Crie um arquivo `.env` na raiz do projeto com as variáveis de ambiente necessárias para configurar o banco de dados e as portas (exemplo disponível no arquivo `.env`).
+- Criar o arquivo `.env` na raiz do projeto copiando o .env.example:
+
+   > No windows:
+
+   ```ini
+   copy .env.example .env
+   ```
+
+   > No linux
+
+   ```ini
+   cp .env.example .env
 
 ### Passos para subir os containers
 
 No terminal bash, dentro do diretório raiz do projeto, execute:
 
 ```bash
-docker-compose up
+docker-compose up --build
+
 ```
 
 Este comando irá construir e iniciar os containers para:
 - Node.js (API)
 - Nginx (servidor web)
 - PostgreSQL (banco de dados)
-
-Para rodar os containers em segundo plano (modo detached), utilize:
-
-```bash
-docker-compose up -d
-```
-
-### Parar os containers
-
-Para parar os containers em execução, use:
-
-```bash
-docker-compose down
-```
 
 ### Acessando a API
 
@@ -94,7 +92,7 @@ Após subir os containers, a API estará disponível em:
 http://localhost:3000
 ```
 
-Você pode interagir com os endpoints da API normalmente, como descrito na seção "Endpoints" acima.
+Você pode interagir com os endpoints da API normalmente, como descrito na seção "Endpoints" .
 ##  Endpoints
 
 ### Criação de Cliente 
