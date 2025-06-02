@@ -39,23 +39,7 @@ Configure as variáveis de ambiente para conexão com o banco de dados PostgreSQ
 - `POSTGRES_HOST`: host do banco (ex: localhost)
 - `POSTGRES_PORT`: porta do banco (ex: 5432)
 
-Crie o banco de dados e a tabela `clientes` executando o script SQL disponível em `docker/postgres/init/init.sql` ou manualmente conforme a estrutura:
-
-```sql
-CREATE TABLE clientes (
-    codigo SERIAL PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
-    data_nascimento DATE,
-    rg VARCHAR(50),
-    cpf VARCHAR(11) UNIQUE,
-    telefone VARCHAR(11),
-    endereco VARCHAR(255),
-    numero VARCHAR(50),
-    cidade VARCHAR(100),
-    uf CHAR(2),
-    cep VARCHAR(8)
-);
-```
+Crie o banco de dados e a tabela `clientes` executando o script SQL disponível em `docker/postgres/init/init.sql`
 
 ## Como Executar a API
 Inicie o servidor NodeJS:
@@ -72,20 +56,7 @@ Por padrão, a API estará rodando em: `http://localhost:3000`
 - **Método:** POST
 - **Endpoint:** `/api/clientes`
 - **Corpo da Requisição (JSON):**
-```json
-{
-  "nome": "João Silva",
-  "data_nascimento": "1980-01-01",
-  "rg": "123456789",
-  "cpf": "12345678901",
-  "telefone": "11999999999",
-  "endereco": "Rua A",
-  "numero": "123",
-  "cidade": "São Paulo",
-  "uf": "SP",
-  "cep": "01001000"
-}
-```
+
 - **Respostas:**
   - 201 Created: Retorna o cliente criado com o campo `codigo` gerado.
   - 400 Bad Request: Campos inválidos ou CPF já existente.
