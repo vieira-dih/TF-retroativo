@@ -4,6 +4,7 @@ import path from 'path';
 
 import exampleModelApi from "./exampleApi.js";
 import ListPublicFilesController from '../app/Controllers/ListPublicFilesController.js';
+import clientesRoutes from './clientes.js';
 
 export default (function () {
 
@@ -22,6 +23,9 @@ export default (function () {
 
     // example model routes
     router.use('/', exampleModelApi);
+
+    // clientes routes
+    router.use('/api/clientes', clientesRoutes);
 
     /** Se nenhuma rota for encontrada, 404 neles! */
     router.use((req, res) => {
