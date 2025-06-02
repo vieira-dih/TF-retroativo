@@ -19,11 +19,11 @@ Uma API RESTful completa utilizando NodeJS e um banco de dados PostgreSQL para g
 ## Instalação
 1. Clone o repositório:
    ```bash
-   git clone <https://github.com/vieira-dih/TF-retroativo.git>
+   git clone https://github.com/vieira-dih/TF-retroativo.git
    ```
 2. Acesse o diretório do projeto:
    ```bash
-   cd <TF-retroativo>
+   cd TF-retroativo
    ```
 3. Instale as dependências:
    ```bash
